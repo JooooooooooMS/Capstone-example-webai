@@ -3,5 +3,3 @@ langchain_core
 langchain_community
 openai
 streamlit
-temfile
-os
