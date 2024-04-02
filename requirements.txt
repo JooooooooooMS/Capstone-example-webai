@@ -1,5 +1,9 @@
 langchain_openai
-langchain_core
-langchain_community
+langchain_core.prompts
+langchain_core.output_parsers
+langchain_community.document_loaders
+langchain_community.vectorstores
 openai
+tempfile
+os
 streamlit
