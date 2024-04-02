@@ -1,8 +1,6 @@
 langchain_openai
-langchain_core.prompts
-langchain_core.output_parsers
-langchain_community.document_loaders
-langchain_community.vectorstores
+langchain_core
+langchain_community
 openai
 os
 streamlit
