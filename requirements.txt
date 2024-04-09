@@ -1,6 +1,7 @@
 langchain_openai
 langchain_core
 langchain_community
+langchain_community.document_loaders
 openai
 pypdf
 streamlit
