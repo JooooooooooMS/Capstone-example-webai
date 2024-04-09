@@ -1,5 +1,5 @@
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
@@ -33,6 +33,7 @@ if uploaded_file is not None:
     db = Chroma.from_documents(pages, embeddings)
 
     st.header("PDF를 넣어 문제를 만들어 보세요!")
+    option = st.selectbox('하나를 고르세요.', ['객관식', 'OX퀴즈', '주관식'])
 
     if st.button('문제 생성 하기'):
         with st.spinner('Wait for it...'):
@@ -78,5 +79,14 @@ if uploaded_file is not None:
             retriever = vector.as_retriever()
             retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-            response = retrieval_chain.invoke({"input": "에 대한 객관식 문제를 하나, 주관식 문제를 하나 만들어줘"})
+            if (option == '객관식') :
+                response = retrieval_chain.invoke(
+                    {"input": "에 대해 문제를 \"문제:다음 보기중 옳은 것은?\n 1번.***\n 2번.***\n 3번.***\n 4번.***\n 5번.**\"과 같이 질문과 그에 대한 정답1개, 오답4개의 보기를 포함하는 형식으로 만들어주고 그에 대한 정답 번호를 \"답:\"에다가 써줘 "})
+            elif (option == '주관식') :
+                response = retrieval_chain.invoke({"input": "에 대한 서술형 문제를 만들어서 \"문제:\" 다음에 써주고 그에 대한 답을 \"답:\"에다가 써줘 "})
+            elif (option == 'OX퀴즈'):
+                response = retrieval_chain.invoke({"input": "에 대한  문제를 \"문제:다음중 참인 문장은 A.*** B.***\"과 같은 질문과 그에 대한 정답인 문장 혹은 보기와 오답인 문장 혹은 보기를 포함하는 형식으로 만들어주고 그에 대해 어느쪽이 답인지 \"답:\"에다가 써줘 "})
+            else:
+                resource = "ERROR: You Don't Select The Type Of Problem"
+            # response = retrieval_chain.invoke({"input": "에 대한 " + option +"문제를 만들어서 \"문제:\" 다음에 써주고 그에 대한 답을 \"답:\"에다가 써줘 "})
             st.write(response["answer"])
