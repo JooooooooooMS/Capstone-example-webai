@@ -13,7 +13,7 @@ import os
 st.title("PDFReader")
 st.write("---")
 
-uploaded_file = st.file_uploader("파일 선택")
+uploaded_file = st.file_uploader(label="파일 선택", type="pdf")
 st.write("---")
 
 def pdf_to_document(uploaded_file):
