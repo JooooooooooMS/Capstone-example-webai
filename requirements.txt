@@ -1,7 +1,6 @@
 langchain_openai
 langchain_core
 langchain_community
-chroma-js
 langchain
 openai
 pypdf
