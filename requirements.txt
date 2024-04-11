@@ -8,5 +8,8 @@ faiss-cpu
 unstructured
 pysqlite3-binary
 pypdf
+pdf2image
+wrapt
+pdfminer
 openai
 streamlit
