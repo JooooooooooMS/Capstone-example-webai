@@ -4,7 +4,7 @@ langchain_community
 langchain_text_splitters
 langchain
 chromadb
-faiss-gpu
+faiss-cpu
 pysqlite3-binary
 pypdf
 openai
