@@ -11,5 +11,9 @@ pypdf
 pdf2image
 wrapt
 pdfminer
+pdfminer.six
+pdfminer.utils
+image
+pillow
 openai
 streamlit
