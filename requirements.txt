@@ -14,5 +14,6 @@ pdfminer
 pdfminer.six
 image
 pillow
+pillow_heif
 openai
 streamlit
