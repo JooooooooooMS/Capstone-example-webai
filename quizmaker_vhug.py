@@ -11,6 +11,9 @@ from langchain_community.vectorstores import FAISS
 import streamlit as st
 import tempfile
 import os
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 st.title("AI Quiz Maker with Capstone")
 st.write("---")
