@@ -7,8 +7,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.document_loaders.image import UnstructuredImageLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-import pdf2image
-from langchain_core.output_parsers import StrOutputParser
+from langchain_community.vectorstores import FAISS
 import streamlit as st
 import tempfile
 import os
@@ -81,8 +80,6 @@ if uploaded_file is not None:
 
             # chain.invoke({"input": "레미제라블의 줄거리를 공백없이 1000자로 써줘"})
 
-            from langchain_community.vectorstores import FAISS
-            from langchain_text_splitters import RecursiveCharacterTextSplitter
 
             text_splitter = RecursiveCharacterTextSplitter()
             documents = text_splitter.split_documents(pages)
