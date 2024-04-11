@@ -4,7 +4,7 @@ langchain_community
 langchain_text_splitters
 langchain
 chromadb
-pysqlite3
+pysqlite3-binary
 pypdf
 openai
 streamlit
