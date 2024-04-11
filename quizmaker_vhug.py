@@ -39,7 +39,7 @@ def pdf_to_document(uploaded_file):
     return pages
 
 def image_to_document(uploaded_file):
-    loader = UnstructuredImageLoader(uploaded_file, mode="elements")
+    loader = UnstructuredImageLoader(uploaded_file)
     data = loader.load()
     return data
 
