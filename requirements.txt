@@ -5,6 +5,7 @@ langchain_text_splitters
 langchain
 chromadb
 faiss-cpu
+unstructured
 pysqlite3-binary
 pypdf
 openai
