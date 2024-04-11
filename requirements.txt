@@ -3,6 +3,7 @@ langchain_core
 langchain_community
 langchain_text_splitters
 langchain
+chromadb
 pypdf
 openai
 streamlit
